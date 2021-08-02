@@ -11,11 +11,11 @@ ansible node00 -m copy -a "src=inventory/ansible-nodes dest=/tmp/ansible-nodes"
 ansible node00 -m shell -a "cat /tmp/ansible-nodes" 
 ansible node00 -b -m yum -a "name=httpd state=present"
 ansible node00 -b -m yum -a "name=git state=present"
-ansible node00 -b -m git -a "repo=https://github.com/becloudready/prometheus_monitoring.git dest=/tmp version=HEAD"
+ansible node01 -b -m git -a "repo=https://github.com/becloudready/prometheus_monitoring.git dest=/temp1 version=HEAD"
 
 # Using Ansible modules in ad-hoc commands
-ansible -m -m yum -a "name=nginx state=present" node00 --become
-ansible -m service -a "name=nginx state=started enabled=yes" node00 --become
-ansible -m file -a "path=/home/ec2-user/usingAnsible state=directory" node00 --become
-ansible -m copy -a "src=Vagrantfile dest=/tmp" node00 --become
+ansible -m yum -a "name=nginx state=present" node01 --become
+ansible -m service -a "name=nginx state=started enabled=yes" node01 --become
+ansible -m file -a "path=/home/ec2-user/usingAnsible state=directory" node01 --become
+ansible -m copy -a "src=README.md dest=/tmp" node01 --become
 
