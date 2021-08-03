@@ -1,4 +1,4 @@
-hosts: webservers
+- hosts: webservers
   become: True
   tasks:
    - name: Install all the packages
@@ -11,4 +11,3 @@ hosts: webservers
     - strace
     - java-1.8.0-openjdk
     - php5
-    
