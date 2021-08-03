@@ -4,11 +4,11 @@
    - name: Install all the packages
      yum:
        name: '{{ item }}'
-       state: present
+       state: absent
        update_cache: True
      with_items:
-      - mlocate
-      - strace
-      - java-1.8.0-openjdk
-      - php
+      # - mlocate
+      # - strace
+      # - java-1.8.0-openjdk
+      # - php
       - git
