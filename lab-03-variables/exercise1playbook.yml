@@ -1,0 +1,32 @@
+- hosts: web
+  gather_facts: true
+  vars_prompt:
+    - name: username
+      prompt: What is your username?
+      private: no
+    - name: password
+      prompt: What is your password?
+  vars:
+    user: "{{username}}"
+  tasks:
+
+    - name: Your input
+      debug: 
+        var: username
+
+    - name: The user var was set
+      debug:
+        var: user
+
+    - name: Making your file
+      shell: touch /tmp/{{user}}.txt
+
+    - name: Adding permissions
+      shell: chmod 644 /tmp/{{user}}.txt 
+
+    - name: The ip of the box
+      debug:
+        var: ansible_default_ipv4.address
+
+    - name: Your hostname is being changed
+      shell: hostname {{user}}
