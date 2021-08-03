@@ -1,0 +1,12 @@
+hosts: webservers
+  become: True
+  tasks:
+   - name: Install all the packages
+     dnf:
+       name: '{{ item }}'
+       state: present
+       update_cache: True
+     with_items:
+    mlocate
+     strace
+     java-1.8.0-openjdk
