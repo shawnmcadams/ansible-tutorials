@@ -1,6 +1,6 @@
 ---
 # create new group, appservers, and install java
-- hosts: webservers  # Host or Group of Selections
+- hosts: webserver  # Host or Group of Selections
   gather_facts: true
   become: true
   vars:
