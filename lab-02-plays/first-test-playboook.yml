@@ -1,0 +1,60 @@
+---
+- hosts: node01  # Host or Group of Selections
+  tasks: 
+    - name: taska1
+      copy: src=inventory/ansible-nodes dest=/tmp/ansible-nodes
+    - name: taska2
+      shell: cat /tmp/ansible-nodes
+    - name: taska3
+      yum: 
+        name: httpd
+        state: present
+    - name: task4a
+      yum:
+        name: git
+        state: present
+    - name: task5a
+        git:
+          repo: https://github.com/becloudready/prometheus_monitoring.git
+          dest: /temp1 
+          version: HEAD
+
+
+      - name: taskb1
+          yum:      
+          name: nginx
+          state: present
+          
+       - name: taskb2
+
+          service:
+            name: nginx
+            state: started
+            enabled: yes
+            
+        - name: taskb3
+            file: 
+              path: /home/ec2-user/usingAnsible
+              state: directory
+
+         - name: taskb4
+            copy:
+              src: README.md
+              dest: /tmp
+
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
