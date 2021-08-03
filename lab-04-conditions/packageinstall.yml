@@ -6,8 +6,8 @@
        name: '{{ item }}'
        state: present
        update_cache: True
-    with_items:
-    - mlocate
-    - strace
-    - java-1.8.0-openjdk
-    - php5
+     with_items:
+      - mlocate
+      - strace
+      - java-1.8.0-openjdk
+      - php5
