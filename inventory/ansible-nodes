@@ -1,5 +1,5 @@
 [webservers]
-143.198.183.56 ansible_ssh_user=root ansible_ssh_private_key_file=~/ansible.pem
+142.93.150.117 ansible_ssh_user=root ansible_ssh_private_key_file=~/ansible.pem
 [dbservers]
 142.93.150.117 ansible_ssh_user=root ansible_ssh_private_key_file=~/ansible.pem
 [appservers]
@@ -7,3 +7,7 @@
 
 
 
+
+
+
+#143.198.183.56
