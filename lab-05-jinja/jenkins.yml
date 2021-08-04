@@ -1,5 +1,5 @@
 - name: Install Jenkins on appserver
-  hosts: appservers
+  hosts: apps
   gather_facts: false
   become: true
   tasks:
