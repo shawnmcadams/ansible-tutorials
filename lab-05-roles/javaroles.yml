@@ -1,0 +1,28 @@
+---
+# create new group, appservers, and install java
+- hosts: webserver  # Host or Group of Selections
+  gather_facts: true
+  become: true
+  vars:
+   env:
+   roles:
+   -httpd
+  
+  
+  
+
+
+  
+
+- hosts: appservers
+  become: true
+  tasks:
+  - name: Install default-jdk
+    yum: name=java-1.8.0-openjdk state=present
+    when: ansible_os_family == "RedHat"
+  - name: Install default-jdk for Debian
+    apt: name=java-1.8.0-openjdk state=present
+    when: ansible_os_family == "Debian"
+  - name: Install java in amazon linux
+    yum: name=java-1.8.0-openjdk state=present
+    when: ansible_os_family == "Amazon"
