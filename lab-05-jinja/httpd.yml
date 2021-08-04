@@ -1,6 +1,6 @@
 ---
 - name: This sets up an httpd webserver
-  hosts: webservers
+  hosts: 147.182.185.37
   tasks:
   
   - name: ensure httpd is running
